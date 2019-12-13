@@ -1,12 +1,12 @@
-import React from "react"
-
-const List = ({items}) => (
+import React from 'react';
+import Todo from './Todo';
+const List = ({ items, handleComplete }) => (
   <div>
-    <h2>List:</h2>
+    <h1>List</h1>
     <ul>
-        { items.map (item => <li key={item.id}> {item.todoValue} </li>)}
+      {/* { items.map( item => <Todo key={item.id} id={item.id} todoValue={item.todoValue} complete={item.complete} /> )} */}
+      { items.map( item => <Todo key={item.id} {...item} handleComplete={handleComplete} /> )}
     </ul>
   </div>
 )
-
 export default List;
